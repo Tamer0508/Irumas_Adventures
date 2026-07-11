@@ -1,0 +1,6 @@
+* text=auto
+*.cs text
+*.meta text
+*.asset text
+*.unity text
+*.prefab text
