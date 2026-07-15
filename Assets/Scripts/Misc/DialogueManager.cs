@@ -21,11 +21,13 @@ public class DialogueManager : MonoBehaviour
 
     private void HandleDialogueStart()
     {
+        Debug.Log("DisableMovement called");
         GameInput.Instance.DisableMovement();
     }
 
     private void HandleDialogueComplete()
     {
+        Debug.Log("EnableMovement called");
         GameInput.Instance.EnableMovement();
     }
 
