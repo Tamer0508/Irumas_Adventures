@@ -37,16 +37,17 @@ public class PlayerVisual : MonoBehaviour
 
     void ProccessInputs()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        Vector2 moveInput = GameInput.Instance.GetMovementVector();
+        float moveX = moveInput.x;
+        float moveY = moveInput.y;
 
-        if((moveX == 0 && moveY == 0) && (input.x != 0 || input.y != 0))
+        if ((moveX == 0 && moveY == 0) && (input.x != 0 || input.y != 0))
         {
             lastMoveDirection = input;
         }
 
-        input.x = Input.GetAxisRaw("Horizontal");
-        input.y = Input.GetAxisRaw("Vertical");
+        input.x = moveX;
+        input.y = moveY;
     }
 
     void Animate()
